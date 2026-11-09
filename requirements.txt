@@ -1,0 +1,2 @@
+# Runtime dependencies: Python standard library only.
+# Python 3.11+ includes tkinter, sqlite3, hashlib and secrets.

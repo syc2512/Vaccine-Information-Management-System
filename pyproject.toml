@@ -1,0 +1,40 @@
+[project]
+name = "vaccine-management-desktop"
+version = "1.0.0"
+description = "A desktop vaccine inventory and cold-chain management application"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "pyinstaller>=6.0",
+]
+
+[project.scripts]
+vaccine-management = "main:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.setuptools.packages.find]
+include = ["config*", "services*", "ui*", "utils*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E9", "F"]
+ignore = ["E501"]
